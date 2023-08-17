@@ -1,0 +1,58 @@
+version: 2
+models:
+  - name: GscDataAggByCountry
+    description: Google search data by country
+    config:
+      materialized: incremental
+      incremental_strategy: merge
+      unique_key: ['country','start_date','end_date']
+      partition_by: { 'field': 'start_date', 'data_type': 'date', 'granularity': 'day' }
+      cluster_by: ['country','start_date','end_date']
+  - name: GscDataAggByDate
+    description: Google search data by date
+    config:
+      materialized: incremental
+      incremental_strategy: merge
+      unique_key: ['date','start_date','end_date']
+      partition_by: { 'field': 'start_date', 'data_type': 'date', 'granularity': 'day' }
+      cluster_by: ['date','start_date','end_date']
+  - name: GscDataAggByDevice
+    description: Google search data by device
+    config:
+      materialized: incremental
+      incremental_strategy: merge
+      unique_key: ['device','start_date','end_date']
+      partition_by: { 'field': 'start_date', 'data_type': 'date', 'granularity': 'day' }
+      cluster_by: ['device','start_date','end_date']
+  - name: GscDataAggByPage
+    description: Google search data by page
+    config:
+      materialized: incremental
+      incremental_strategy: merge
+      unique_key: ['page','start_date','end_date']
+      partition_by: { 'field': 'start_date', 'data_type': 'date', 'granularity': 'day' }
+      cluster_by: ['page','start_date','end_date']
+  - name: GscDataAggByQuery
+    description: Google search data by query
+    config:
+      materialized: incremental
+      incremental_strategy: merge
+      unique_key: ['query','start_date','end_date']
+      partition_by: { 'field': 'start_date', 'data_type': 'date', 'granularity': 'day' }
+      cluster_by: ['query','start_date','end_date']
+  - name: Sitemaps
+    description: Google search data by sitemaps
+    config:
+      materialized: incremental
+      incremental_strategy: merge
+      unique_key: ['path']
+      partition_by: { 'field': 'start_date', 'data_type': 'date', 'granularity': 'day' }
+      cluster_by: ['path']
+  - name: Sites
+    description: Google search data by sites
+    config:
+      materialized: incremental
+      incremental_strategy: merge
+      unique_key: ['siteUrl']
+      partition_by: { 'field': 'start_date', 'data_type': 'date', 'granularity': 'day' }
+      cluster_by: ['siteUrl']
