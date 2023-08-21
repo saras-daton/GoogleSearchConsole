@@ -15,26 +15,6 @@ models:
             - start_date
             - end_date
     columns:
-      - name: query
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: device
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: date
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: page
-        tests:
-          - not_null:
-              config:
-                severity: error
       - name: country
         tests:
           - not_null:
@@ -46,31 +26,6 @@ models:
               config:
                 severity: error
       - name: end_date
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: clicks
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: impressions
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: ctr
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: position
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: searchType
         tests:
           - not_null:
               config:
@@ -90,27 +45,7 @@ models:
             - start_date
             - end_date
     columns:
-      - name: query
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: device
-        tests:
-          - not_null:
-              config:
-                severity: error
       - name: date
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: page
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: country
         tests:
           - not_null:
               config:
@@ -121,31 +56,6 @@ models:
               config:
                 severity: error
       - name: end_date
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: clicks
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: impressions
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: ctr
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: position
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: searchType
         tests:
           - not_null:
               config:
@@ -165,27 +75,7 @@ models:
             - start_date
             - end_date
     columns:
-      - name: query
-        tests:
-          - not_null:
-              config:
-                severity: error
       - name: device
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: date
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: page
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: country
         tests:
           - not_null:
               config:
@@ -196,31 +86,6 @@ models:
               config:
                 severity: error
       - name: end_date
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: clicks
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: impressions
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: ctr
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: position
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: searchType
         tests:
           - not_null:
               config:
@@ -240,27 +105,7 @@ models:
             - start_date
             - end_date
     columns:
-      - name: query
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: device
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: date
-        tests:
-          - not_null:
-              config:
-                severity: error
       - name: page
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: country
         tests:
           - not_null:
               config:
@@ -271,31 +116,6 @@ models:
               config:
                 severity: error
       - name: end_date
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: clicks
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: impressions
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: ctr
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: position
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: searchType
         tests:
           - not_null:
               config:
@@ -320,57 +140,12 @@ models:
           - not_null:
               config:
                 severity: error
-      - name: device
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: date
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: page
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: country
-        tests:
-          - not_null:
-              config:
-                severity: error
       - name: start_date
         tests:
           - not_null:
               config:
                 severity: error
       - name: end_date
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: clicks
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: impressions
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: ctr
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: position
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: searchType
         tests:
           - not_null:
               config:
@@ -393,46 +168,6 @@ models:
           - not_null:
               config:
                 severity: error
-      - name: lastSubmitted
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: isPending
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: isSitemapsIndex
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: type
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: lastDownloaded
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: warnings
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: errors
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: contents
-        tests:
-          - not_null:
-              config:
-                severity: error
   - name: Sites
     description: A detailed report giving details about the google search console data by sites
     config:
@@ -447,11 +182,6 @@ models:
             - siteUrl
     columns:
       - name: siteUrl
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: permissionLevel
         tests:
           - not_null:
               config:

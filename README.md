@@ -11,7 +11,7 @@ This dbt package is for Data Unification of Google Search Console ingested data 
 - Data duplication due to look back period while fetching report data from Google Search Console
 - Separate tables at marketplaces/Store, brand, account level for same kind of report/data feeds
 
-Data Unification simplifies Data Analytics by doing:
+#### Data Unification simplifies Data Analytics by doing:
 
 - Consolidation - Different marketplaces/Store/account & different brands would have similar raw Daton Ingested tables, which are consolidated into one table with column distinguishers brand & store
 - Deduplication - Based on primary keys, the data is De-duplicated and the latest records are only loaded into the consolidated stage tables
@@ -119,72 +119,72 @@ The tests property defines assertions about a column, table, or view. The proper
 
 |   **Columns**    | **Not Null Test** | **Data Recency Test** | **Accepted Value Test** | **Uniqueness Test** |
 |       :--        |        :-:        |          :-:          |           :-:           |         :-:         |
-| `     query     `|        Yes        |                       |                         |                     |
-| `    device     `|        Yes        |                       |                         |                     |
-| `     date      `|        Yes        |                       |                         |                     |
-| `     page      `|        Yes        |                       |                         |                     |
+| `     query     `|                   |                       |                         |                     |
+| `    device     `|                   |                       |                         |                     |
+| `     date      `|                   |                       |                         |                     |
+| `     page      `|                   |                       |                         |                     |
 | `    country    `|        Yes        |                       |                         |         Yes         |
 | `   start_date  `|        Yes        |                       |                         |         Yes         |
 | `   end_date    `|        Yes        |                       |                         |         Yes         |
-| `    clicks     `|        Yes        |                       |                         |                     |
-| `  impressions  `|        Yes        |                       |                         |                     |
-| `      ctr      `|        Yes        |                       |                         |                     |
-| `   position    `|        Yes        |                       |                         |                     |
-| `  searchType   `|        Yes        |                       |                         |                     |
+| `    clicks     `|                   |                       |                         |                     |
+| `  impressions  `|                   |                       |                         |                     |
+| `      ctr      `|                   |                       |                         |                     |
+| `   position    `|                   |                       |                         |                     |
+| `  searchType   `|                   |                       |                         |                     |
 
 
 ### Table Name: Brand_US_GoogleSearchConsole_gsc_data_agg_by_date
 
 |   **Columns**    | **Not Null Test** | **Data Recency Test** | **Accepted Value Test** | **Uniqueness Test** |
 |       :--        |        :-:        |          :-:          |           :-:           |         :-:         |
-| `     query     `|        Yes        |                       |                         |                     |
-| `    device     `|        Yes        |                       |                         |                     |
+| `     query     `|                   |                       |                         |                     |
+| `    device     `|                   |                       |                         |                     |
 | `     date      `|        Yes        |                       |                         |         Yes         |
-| `     page      `|        Yes        |                       |                         |                     |
-| `    country    `|        Yes        |                       |                         |                     |
+| `     page      `|                   |                       |                         |                     |
+| `    country    `|                   |                       |                         |                     |
 | `   start_date  `|        Yes        |                       |                         |         Yes         |
 | `   end_date    `|        Yes        |                       |                         |         Yes         |
-| `    clicks     `|        Yes        |                       |                         |                     |
-| `  impressions  `|        Yes        |                       |                         |                     |
-| `      ctr      `|        Yes        |                       |                         |                     |
-| `   position    `|        Yes        |                       |                         |                     |
-| `  searchType   `|        Yes        |                       |                         |                     |
+| `    clicks     `|                   |                       |                         |                     |
+| `  impressions  `|                   |                       |                         |                     |
+| `      ctr      `|                   |                       |                         |                     |
+| `   position    `|                   |                       |                         |                     |
+| `  searchType   `|                   |                       |                         |                     |
 
 
 ### Table Name: Brand_US_GoogleSearchConsole_gsc_data_agg_by_device
 
 |   **Columns**    | **Not Null Test** | **Data Recency Test** | **Accepted Value Test** | **Uniqueness Test** |
 |       :--        |        :-:        |          :-:          |           :-:           |         :-:         |
-| `     query     `|        Yes        |                       |                         |                     |
+| `     query     `|                   |                       |                         |                     |
 | `    device     `|        Yes        |                       |                         |         Yes         |
-| `     date      `|        Yes        |                       |                         |                     |
-| `     page      `|        Yes        |                       |                         |                     |
-| `    country    `|        Yes        |                       |                         |                     |
+| `     date      `|                   |                       |                         |                     |
+| `     page      `|                   |                       |                         |                     |
+| `    country    `|                   |                       |                         |                     |
 | `   start_date  `|        Yes        |                       |                         |         Yes         |
 | `   end_date    `|        Yes        |                       |                         |         Yes         |
-| `    clicks     `|        Yes        |                       |                         |                     |
-| `  impressions  `|        Yes        |                       |                         |                     |
-| `      ctr      `|        Yes        |                       |                         |                     |
-| `   position    `|        Yes        |                       |                         |                     |
-| `  searchType   `|        Yes        |                       |                         |                     |
+| `    clicks     `|                   |                       |                         |                     |
+| `  impressions  `|                   |                       |                         |                     |
+| `      ctr      `|                   |                       |                         |                     |
+| `   position    `|                   |                       |                         |                     |
+| `  searchType   `|                   |                       |                         |                     |
 
 
 ### Table Name: Brand_US_GoogleSearchConsole_gsc_data_agg_by_page
 
 |   **Columns**    | **Not Null Test** | **Data Recency Test** | **Accepted Value Test** | **Uniqueness Test** |
 |       :--        |        :-:        |          :-:          |           :-:           |         :-:         |
-| `     query     `|        Yes        |                       |                         |                     |
-| `    device     `|        Yes        |                       |                         |                     |
-| `     date      `|        Yes        |                       |                         |                     |
+| `     query     `|                   |                       |                         |                     |
+| `    device     `|                   |                       |                         |                     |
+| `     date      `|                   |                       |                         |                     |
 | `     page      `|        Yes        |                       |                         |         Yes         |
-| `    country    `|        Yes        |                       |                         |                     |
+| `    country    `|                   |                       |                         |                     |
 | `   start_date  `|        Yes        |                       |                         |         Yes         |
 | `   end_date    `|        Yes        |                       |                         |         Yes         |
-| `    clicks     `|        Yes        |                       |                         |                     |
-| `  impressions  `|        Yes        |                       |                         |                     |
-| `      ctr      `|        Yes        |                       |                         |                     |
-| `   position    `|        Yes        |                       |                         |                     |
-| `  searchType   `|        Yes        |                       |                         |                     |
+| `    clicks     `|                   |                       |                         |                     |
+| `  impressions  `|                   |                       |                         |                     |
+| `      ctr      `|                   |                       |                         |                     |
+| `   position    `|                   |                       |                         |                     |
+| `  searchType   `|                   |                       |                         |                     |
 
 
 ### Table Name: Brand_US_GoogleSearchConsole_gsc_data_agg_by_query
@@ -192,17 +192,17 @@ The tests property defines assertions about a column, table, or view. The proper
 |   **Columns**    | **Not Null Test** | **Data Recency Test** | **Accepted Value Test** | **Uniqueness Test** |
 |       :--        |        :-:        |          :-:          |           :-:           |         :-:         |
 | `     query     `|        Yes        |                       |                         |         Yes         |
-| `    device     `|        Yes        |                       |                         |                     |
-| `     date      `|        Yes        |                       |                         |                     |
-| `     page      `|        Yes        |                       |                         |                     |
-| `    country    `|        Yes        |                       |                         |                     |
+| `    device     `|                   |                       |                         |                     |
+| `     date      `|                   |                       |                         |                     |
+| `     page      `|                   |                       |                         |                     |
+| `    country    `|                   |                       |                         |                     |
 | `   start_date  `|        Yes        |                       |                         |         Yes         |
 | `   end_date    `|        Yes        |                       |                         |         Yes         |
-| `    clicks     `|        Yes        |                       |                         |                     |
-| `  impressions  `|        Yes        |                       |                         |                     |
-| `      ctr      `|        Yes        |                       |                         |                     |
-| `   position    `|        Yes        |                       |                         |                     |
-| `  searchType   `|        Yes        |                       |                         |                     |
+| `    clicks     `|                   |                       |                         |                     |
+| `  impressions  `|                   |                       |                         |                     |
+| `      ctr      `|                   |                       |                         |                     |
+| `   position    `|                   |                       |                         |                     |
+| `  searchType   `|                   |                       |                         |                     |
 
 
 ### Table Name: Brand_US_GoogleSearchConsole_sitemaps
@@ -210,14 +210,14 @@ The tests property defines assertions about a column, table, or view. The proper
 |   **Columns**    | **Not Null Test** | **Data Recency Test** | **Accepted Value Test** | **Uniqueness Test** |
 |       :--        |        :-:        |          :-:          |           :-:           |         :-:         |
 | `     path      `|        Yes        |                       |                         |         Yes         |
-| ` lastSubmitted `|        Yes        |                       |                         |                     |
-| `   isPending   `|        Yes        |                       |                         |                     |
-| `isSitemapsIndex`|        Yes        |                       |                         |                     |
-| `     type      `|        Yes        |                       |                         |                     |
-| ` lastDownloaded`|        Yes        |                       |                         |                     |
-| `   warnings    `|        Yes        |                       |                         |                     |
-| `     errors    `|        Yes        |                       |                         |                     |
-| `    contents   `|        Yes        |                       |                         |                     |
+| ` lastSubmitted `|                   |                       |                         |                     |
+| `   isPending   `|                   |                       |                         |                     |
+| `isSitemapsIndex`|                   |                       |                         |                     |
+| `     type      `|                   |                       |                         |                     |
+| ` lastDownloaded`|                   |                       |                         |                     |
+| `   warnings    `|                   |                       |                         |                     |
+| `     errors    `|                   |                       |                         |                     |
+| `    contents   `|                   |                       |                         |                     |
 
 
 ### Table Name: Brand_US_GoogleSearchConsole_sites
@@ -225,7 +225,7 @@ The tests property defines assertions about a column, table, or view. The proper
 |   **Columns**    | **Not Null Test** | **Data Recency Test** | **Accepted Value Test** | **Uniqueness Test** |
 |       :--        |        :-:        |          :-:          |           :-:           |         :-:         |
 | `    siteUrl    `|        Yes        |                       |                         |         Yes         |
-| `permissionLevel`|        Yes        |                       |                         |                     |
+| `permissionLevel`|                   |                       |                         |                     |
 
 
 ### For details about default configurations for Table Primary Key columns, Partition columns, Clustering columns, please refer the properties.yaml used for this package as below.
@@ -250,26 +250,6 @@ models:
             - start_date
             - end_date
     columns:
-      - name: query
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: device
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: date
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: page
-        tests:
-          - not_null:
-              config:
-                severity: error
       - name: country
         tests:
           - not_null:
@@ -281,31 +261,6 @@ models:
               config:
                 severity: error
       - name: end_date
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: clicks
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: impressions
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: ctr
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: position
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: searchType
         tests:
           - not_null:
               config:
@@ -325,27 +280,7 @@ models:
             - start_date
             - end_date
     columns:
-      - name: query
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: device
-        tests:
-          - not_null:
-              config:
-                severity: error
       - name: date
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: page
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: country
         tests:
           - not_null:
               config:
@@ -356,31 +291,6 @@ models:
               config:
                 severity: error
       - name: end_date
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: clicks
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: impressions
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: ctr
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: position
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: searchType
         tests:
           - not_null:
               config:
@@ -400,27 +310,7 @@ models:
             - start_date
             - end_date
     columns:
-      - name: query
-        tests:
-          - not_null:
-              config:
-                severity: error
       - name: device
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: date
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: page
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: country
         tests:
           - not_null:
               config:
@@ -431,31 +321,6 @@ models:
               config:
                 severity: error
       - name: end_date
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: clicks
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: impressions
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: ctr
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: position
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: searchType
         tests:
           - not_null:
               config:
@@ -475,27 +340,7 @@ models:
             - start_date
             - end_date
     columns:
-      - name: query
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: device
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: date
-        tests:
-          - not_null:
-              config:
-                severity: error
       - name: page
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: country
         tests:
           - not_null:
               config:
@@ -506,31 +351,6 @@ models:
               config:
                 severity: error
       - name: end_date
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: clicks
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: impressions
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: ctr
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: position
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: searchType
         tests:
           - not_null:
               config:
@@ -555,57 +375,12 @@ models:
           - not_null:
               config:
                 severity: error
-      - name: device
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: date
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: page
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: country
-        tests:
-          - not_null:
-              config:
-                severity: error
       - name: start_date
         tests:
           - not_null:
               config:
                 severity: error
       - name: end_date
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: clicks
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: impressions
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: ctr
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: position
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: searchType
         tests:
           - not_null:
               config:
@@ -628,46 +403,6 @@ models:
           - not_null:
               config:
                 severity: error
-      - name: lastSubmitted
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: isPending
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: isSitemapsIndex
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: type
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: lastDownloaded
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: warnings
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: errors
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: contents
-        tests:
-          - not_null:
-              config:
-                severity: error
   - name: Sites
     description: A detailed report giving details about the google search console data by sites
     config:
@@ -682,11 +417,6 @@ models:
             - siteUrl
     columns:
       - name: siteUrl
-        tests:
-          - not_null:
-              config:
-                severity: error
-      - name: permissionLevel
         tests:
           - not_null:
               config:
