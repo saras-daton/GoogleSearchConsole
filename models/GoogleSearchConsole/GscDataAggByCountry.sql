@@ -6,7 +6,7 @@
 
     {% if is_incremental() %}
     {%- set max_loaded_query -%}
-    SELECT coalesce(MAX(_daton_batch_runtime) - 2592000000,0) FROM {{ this }}
+    select coalesce(max(_daton_batch_runtime) - 2592000000,0) from {{ this }}
     {% endset %}
 
     {%- set max_loaded_results = run_query(max_loaded_query) -%}
@@ -31,7 +31,6 @@
     {% set results_list = [] %}
     {% endif %}
 
-
     {% for i in results_list %}
         {% if var('get_brandname_from_tablename_flag') %}
             {% set brand =i.split('.')[2].split('_')[var('brandname_position_in_tablename')] %}
@@ -45,35 +44,34 @@
             {% set store = var('default_storename') %}
         {% endif %}
 
-        SELECT * {{exclude()}} (row_num)
-        From (
-            select 
-            '{{brand}}' as brand,
-            '{{store}}' as store,
-            query,
-            device,
-            date,
-            page,
-            country,
-            start_date,
-            end_date,
-            clicks,
-            impressions,
-            ctr,
-            position,
-            searchType,
-	        {{daton_user_id()}} as _daton_user_id,
-            {{daton_batch_runtime()}} as _daton_batch_runtime,
-            {{daton_batch_id()}} as _daton_batch_id,
-            current_timestamp() as _last_updated,
-            '{{env_var("DBT_CLOUD_RUN_ID", "manual")}}' as _run_id,
-            DENSE_RANK() OVER (PARTITION BY country, start_date, end_date order by {{daton_batch_runtime()}} desc) row_num
-            from {{i}}
-                {% if is_incremental() %}
-                {# /* -- this filter will only be applied on an incremental run */ #}
-                WHERE {{daton_batch_runtime()}}  >= {{max_loaded}}
-                {% endif %}         
+        select * 
+        from (
+        select 
+        '{{brand}}' as brand,
+        '{{store}}' as store,
+        query,
+        device,
+        date,
+        page,
+        country,
+        start_date,
+        end_date,
+        clicks,
+        impressions,
+        ctr,
+        position,
+        searchType,
+        {{daton_user_id()}} as _daton_user_id,
+        {{daton_batch_runtime()}} as _daton_batch_runtime,
+        {{daton_batch_id()}} as _daton_batch_id,
+        current_timestamp() as _last_updated,
+        '{{env_var("DBT_CLOUD_RUN_ID", "manual")}}' as _run_id
+        from {{i}}
+        {% if is_incremental() %}
+        {# /* -- this filter will only be applied on an incremental run */ #}
+        where {{daton_batch_runtime()}}  >= {{max_loaded}}
+        {% endif %}
         )
-        where row_num = 1 
+        qualify dense_rank() over (partition by country, start_date, end_date order by {{daton_batch_runtime()}} desc) = 1 
         {% if not loop.last %} union all {% endif %}
     {% endfor %}

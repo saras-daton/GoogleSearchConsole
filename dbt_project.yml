@@ -40,6 +40,12 @@ vars:
       # Above are Example entries for raw table level input offset hours
 
   GscDataAggByCountry: True
+  GscDataAggByDate: True
+  GscDataAggByDevice: True
+  GscDataAggByPage: True
+  GscDataAggByQuery: True
+  Sitemaps: True
+  Sites: True
   
   
 # These configurations specify where dbt should look for different types of files.

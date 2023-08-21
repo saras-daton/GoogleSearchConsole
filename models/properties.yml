@@ -1,58 +1,458 @@
 version: 2
 models:
   - name: GscDataAggByCountry
-    description: Google search data by country
+    description: A detailed report giving details about the google search console data by country
     config:
       materialized: incremental
       incremental_strategy: merge
       unique_key: ['country','start_date','end_date']
       partition_by: { 'field': 'start_date', 'data_type': 'date', 'granularity': 'day' }
       cluster_by: ['country','start_date','end_date']
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - country
+            - start_date
+            - end_date
+    columns:
+      - name: query
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: device
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: date
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: page
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: country
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: start_date
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: end_date
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: clicks
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: impressions
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: ctr
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: position
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: searchType
+        tests:
+          - not_null:
+              config:
+                severity: error
   - name: GscDataAggByDate
-    description: Google search data by date
+    description: A detailed report giving details about the google search console data by date
     config:
       materialized: incremental
       incremental_strategy: merge
       unique_key: ['date','start_date','end_date']
       partition_by: { 'field': 'start_date', 'data_type': 'date', 'granularity': 'day' }
       cluster_by: ['date','start_date','end_date']
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - date
+            - start_date
+            - end_date
+    columns:
+      - name: query
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: device
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: date
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: page
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: country
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: start_date
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: end_date
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: clicks
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: impressions
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: ctr
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: position
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: searchType
+        tests:
+          - not_null:
+              config:
+                severity: error
   - name: GscDataAggByDevice
-    description: Google search data by device
+    description: A detailed report giving details about the google search console data by device
     config:
       materialized: incremental
       incremental_strategy: merge
       unique_key: ['device','start_date','end_date']
       partition_by: { 'field': 'start_date', 'data_type': 'date', 'granularity': 'day' }
       cluster_by: ['device','start_date','end_date']
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - device
+            - start_date
+            - end_date
+    columns:
+      - name: query
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: device
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: date
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: page
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: country
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: start_date
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: end_date
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: clicks
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: impressions
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: ctr
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: position
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: searchType
+        tests:
+          - not_null:
+              config:
+                severity: error
   - name: GscDataAggByPage
-    description: Google search data by page
+    description: A detailed report giving details about the google search console data by page
     config:
       materialized: incremental
       incremental_strategy: merge
       unique_key: ['page','start_date','end_date']
       partition_by: { 'field': 'start_date', 'data_type': 'date', 'granularity': 'day' }
       cluster_by: ['page','start_date','end_date']
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - page
+            - start_date
+            - end_date
+    columns:
+      - name: query
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: device
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: date
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: page
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: country
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: start_date
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: end_date
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: clicks
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: impressions
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: ctr
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: position
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: searchType
+        tests:
+          - not_null:
+              config:
+                severity: error
   - name: GscDataAggByQuery
-    description: Google search data by query
+    description: A detailed report giving details about the google search console data by query
     config:
       materialized: incremental
       incremental_strategy: merge
       unique_key: ['query','start_date','end_date']
       partition_by: { 'field': 'start_date', 'data_type': 'date', 'granularity': 'day' }
       cluster_by: ['query','start_date','end_date']
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - query
+            - start_date
+            - end_date
+    columns:
+      - name: query
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: device
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: date
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: page
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: country
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: start_date
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: end_date
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: clicks
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: impressions
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: ctr
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: position
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: searchType
+        tests:
+          - not_null:
+              config:
+                severity: error
   - name: Sitemaps
-    description: Google search data by sitemaps
+    description: A detailed report giving details about the google search console data by sitemaps
     config:
       materialized: incremental
       incremental_strategy: merge
       unique_key: ['path']
       partition_by: { 'field': 'start_date', 'data_type': 'date', 'granularity': 'day' }
       cluster_by: ['path']
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - path
+    columns:
+      - name: path
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: lastSubmitted
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: isPending
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: isSitemapsIndex
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: type
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: lastDownloaded
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: warnings
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: errors
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: contents
+        tests:
+          - not_null:
+              config:
+                severity: error
   - name: Sites
-    description: Google search data by sites
+    description: A detailed report giving details about the google search console data by sites
     config:
       materialized: incremental
       incremental_strategy: merge
       unique_key: ['siteUrl']
       partition_by: { 'field': 'start_date', 'data_type': 'date', 'granularity': 'day' }
       cluster_by: ['siteUrl']
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - siteUrl
+    columns:
+      - name: siteUrl
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: permissionLevel
+        tests:
+          - not_null:
+              config:
+                severity: error
