@@ -60,7 +60,7 @@
         lastSubmitted,
         isPending,
         isSitemapsIndex,
-        type,
+        sitemaps.type as sitemaps_type,
         lastDownloaded,
         warnings,
         errors,
@@ -76,7 +76,7 @@
         {{daton_user_id()}} as _daton_user_id,
         {{daton_batch_runtime()}} as _daton_batch_runtime,
         {{daton_batch_id()}} as _daton_batch_id
-        from {{i}}
+        from {{i}} as sitemaps
         {{unnesting("contents")}}
         {% if is_incremental() %}
         {# /* -- this filter will only be applied on an incremental run */ #}
