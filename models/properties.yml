@@ -5,15 +5,16 @@ models:
     config:
       materialized: incremental
       incremental_strategy: merge
-      unique_key: ['country','start_date','end_date']
+      unique_key: ['country','start_date','end_date','searchType']
       partition_by: { 'field': 'start_date', 'data_type': 'date', 'granularity': 'day' }
-      cluster_by: ['country','start_date','end_date']
+      cluster_by: ['country','start_date','end_date','searchType']
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - country
             - start_date
             - end_date
+            - searchType
     columns:
       - name: country
         tests:
@@ -30,20 +31,26 @@ models:
           - not_null:
               config:
                 severity: error
+      - name: searchType
+        tests:
+          - not_null:
+              config:
+                severity: error
   - name: GscDataAggByDate
     description: A detailed report giving details about the google search console data by date
     config:
       materialized: incremental
       incremental_strategy: merge
-      unique_key: ['date','start_date','end_date']
+      unique_key: ['date','start_date','end_date','searchType']
       partition_by: { 'field': 'start_date', 'data_type': 'date', 'granularity': 'day' }
-      cluster_by: ['date','start_date','end_date']
+      cluster_by: ['date','start_date','end_date','searchType']
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - date
             - start_date
             - end_date
+            - searchType
     columns:
       - name: date
         tests:
@@ -60,20 +67,26 @@ models:
           - not_null:
               config:
                 severity: error
+      - name: searchType
+        tests:
+          - not_null:
+              config:
+                severity: error
   - name: GscDataAggByDevice
     description: A detailed report giving details about the google search console data by device
     config:
       materialized: incremental
       incremental_strategy: merge
-      unique_key: ['device','start_date','end_date']
+      unique_key: ['device','start_date','end_date','searchType']
       partition_by: { 'field': 'start_date', 'data_type': 'date', 'granularity': 'day' }
-      cluster_by: ['device','start_date','end_date']
+      cluster_by: ['device','start_date','end_date','searchType']
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - device
             - start_date
             - end_date
+            - searchType
     columns:
       - name: device
         tests:
@@ -90,20 +103,26 @@ models:
           - not_null:
               config:
                 severity: error
+      - name: searchType
+        tests:
+          - not_null:
+              config:
+                severity: error
   - name: GscDataAggByPage
     description: A detailed report giving details about the google search console data by page
     config:
       materialized: incremental
       incremental_strategy: merge
-      unique_key: ['page','start_date','end_date']
+      unique_key: ['page','start_date','end_date','searchType']
       partition_by: { 'field': 'start_date', 'data_type': 'date', 'granularity': 'day' }
-      cluster_by: ['page','start_date','end_date']
+      cluster_by: ['page','start_date','end_date','searchType']
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - page
             - start_date
             - end_date
+            - searchType
     columns:
       - name: page
         tests:
@@ -120,20 +139,26 @@ models:
           - not_null:
               config:
                 severity: error
+      - name: searchType
+        tests:
+          - not_null:
+              config:
+                severity: error
   - name: GscDataAggByQuery
     description: A detailed report giving details about the google search console data by query
     config:
       materialized: incremental
       incremental_strategy: merge
-      unique_key: ['query','start_date','end_date']
+      unique_key: ['query','start_date','end_date','searchType']
       partition_by: { 'field': 'start_date', 'data_type': 'date', 'granularity': 'day' }
-      cluster_by: ['query','start_date','end_date']
+      cluster_by: ['query','start_date','end_date','searchType']
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - query
             - start_date
             - end_date
+            - searchType
     columns:
       - name: query
         tests:
@@ -146,6 +171,11 @@ models:
               config:
                 severity: error
       - name: end_date
+        tests:
+          - not_null:
+              config:
+                severity: error
+      - name: searchType
         tests:
           - not_null:
               config:

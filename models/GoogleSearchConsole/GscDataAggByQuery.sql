@@ -71,6 +71,6 @@
         where {{daton_batch_runtime()}}  >= {{max_loaded}}
         {% endif %}
         )
-        qualify dense_rank() over (partition by query, start_date, end_date order by {{daton_batch_runtime()}} desc) = 1 
+        qualify dense_rank() over (partition by query, start_date, end_date, searchType order by {{daton_batch_runtime()}} desc) = 1 
         {% if not loop.last %} union all {% endif %}
     {% endfor %}
